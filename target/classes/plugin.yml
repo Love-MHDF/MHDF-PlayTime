@@ -1,0 +1,15 @@
+name: MHDF-PlayTime
+version: '1.0'
+main: cn.chengzhiya.mhdfplaytime.main
+depend: [ PlaceholderAPI ]
+api-version: '1.18'
+commands:
+  playtime:
+    description: 查询在线时长
+  playtimereload:
+    description: 重载插件配置文件
+    permission: PlayTime.op
+permissions:
+  PlayTime.op:
+    description: op默认权限
+    default: op

@@ -1,0 +1,23 @@
+#数据库设置
+DatabaseSettings:
+  #地址
+  Host: "localhost:3306"
+  #数据库
+  Database: "mhdfplaytime"
+  #表
+  Table: "data"
+  #用户
+  User: "root"
+  #密码
+  Password: "root"
+#在线奖励执行操作
+RunAction:
+  #在线时长达到1秒时执行操作
+  1:
+    #操作列表
+    ActionList:
+      - "player|playtime" #玩家执行命令[支持PAPI]
+      - "console|say %player_name% 你好!" #后台执行命令[支持PAPI]
+      - "title|这里是大标题|这里是小标题|10|70|10" #发送Title[支持PAPI] **后面的三个数字对应 淡入 停留 淡出 时间**
+      - "message|这里是消息第一行|这里是消息第二行" #发送消息[支持PAPI]
+      - "sound|这里填音频ID" #播放原版音频
