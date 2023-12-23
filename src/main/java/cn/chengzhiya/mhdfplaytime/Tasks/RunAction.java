@@ -41,8 +41,8 @@ public final class RunAction extends BukkitRunnable {
                             player.sendMessage(ChatColor(PlaceholderAPI.setPlaceholders(player, Action[1])));
                         } else {
                             StringBuilder Message = new StringBuilder();
-                            for (int i = 1; i < Action.length - 1; i++) {
-                                if (i != Action.length - 1) {
+                            for (int i = 1; i < Action.length; i++) {
+                                if (i != Action.length-1) {
                                     Message.append(Action[i]).append("\n");
                                 } else {
                                     Message.append(Action[i]);
