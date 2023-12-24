@@ -47,6 +47,21 @@ public final class Util {
         }
     }
 
+    public static void initializationDatabase() {
+        Bukkit.getScheduler().runTaskAsynchronously(main.main, () -> {
+            try {
+                Connection connection = dataSource.getConnection();
+                PreparedStatement ps = connection.prepareStatement("CREATE TABLE IF NOT EXISTS ? (`PlayerName` VARCHAR(50) NOT NULL,`PlayTime` INT NOT NULL DEFAULT 0,PRIMARY KEY (`PlayerName`))");
+                ps.setString(1, main.main.getConfig().getString("DatabaseSettings.Table"));
+                ps.executeUpdate();
+                ps.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
     public static void initializationPlayerData(Player player) {
         Bukkit.getScheduler().runTaskAsynchronously(main.main, () -> {
             if (!ifExists(player)) {

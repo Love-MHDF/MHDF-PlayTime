@@ -19,6 +19,7 @@ import java.util.Objects;
 import java.util.TimeZone;
 
 import static cn.chengzhiya.mhdfplaytime.Util.ColorLog;
+import static cn.chengzhiya.mhdfplaytime.Util.initializationDatabase;
 import static cn.chengzhiya.mhdfplaytime.YamlFileUtil.SaveResource;
 
 public final class main extends JavaPlugin {
@@ -59,6 +60,7 @@ public final class main extends JavaPlugin {
         if (!ConfigFile.exists()) {
             SaveResource(this.getDataFolder().getPath(), "config.yml", "config.yml", true);
         }
+        initializationDatabase();
 
         Bukkit.getPluginManager().registerEvents(new PlayerJoin(), this);
         Objects.requireNonNull(getCommand("playtime")).setExecutor(new playtime());
