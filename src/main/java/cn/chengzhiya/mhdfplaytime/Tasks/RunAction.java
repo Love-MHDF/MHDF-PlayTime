@@ -42,7 +42,7 @@ public final class RunAction extends BukkitRunnable {
                         } else {
                             StringBuilder Message = new StringBuilder();
                             for (int i = 1; i < Action.length; i++) {
-                                if (i != Action.length-1) {
+                                if (i != Action.length - 1) {
                                     Message.append(Action[i]).append("\n");
                                 } else {
                                     Message.append(Action[i]);

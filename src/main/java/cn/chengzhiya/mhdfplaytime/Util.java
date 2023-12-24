@@ -51,8 +51,7 @@ public final class Util {
         Bukkit.getScheduler().runTaskAsynchronously(main.main, () -> {
             try {
                 Connection connection = dataSource.getConnection();
-                PreparedStatement ps = connection.prepareStatement("CREATE TABLE IF NOT EXISTS ? (`PlayerName` VARCHAR(50) NOT NULL,`PlayTime` INT NOT NULL DEFAULT 0,PRIMARY KEY (`PlayerName`))");
-                ps.setString(1, main.main.getConfig().getString("DatabaseSettings.Table"));
+                PreparedStatement ps = connection.prepareStatement("CREATE TABLE IF NOT EXISTS `" + main.main.getConfig().getString("DatabaseSettings.Table") + "` (`PlayerName` VARCHAR(50) NOT NULL,`PlayTime` INT NOT NULL DEFAULT 0,PRIMARY KEY (`PlayerName`))");
                 ps.executeUpdate();
                 ps.close();
                 connection.close();
