@@ -103,8 +103,8 @@ public final class Util {
     }
 
     public static int getPlayTime(Player player) {
-        if (ifExists(player)) {
-            if (getPlayTimeHashMap().get(player.getName()) == null) {
+        if (getPlayTimeHashMap().get(player.getName()) == null) {
+            if (ifExists(player)) {
                 try {
                     Connection connection = dataSource.getConnection();
                     PreparedStatement ps = connection.prepareStatement("SELECT * FROM " + main.main.getConfig().getString("DatabaseSettings.Table") + " WHERE PlayerName = ? LIMIT 1");
@@ -119,9 +119,9 @@ public final class Util {
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
-            } else {
-                return getPlayTimeHashMap().get(player.getName());
             }
+        } else {
+            return getPlayTimeHashMap().get(player.getName());
         }
         return 0;
     }

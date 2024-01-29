@@ -42,6 +42,7 @@ public final class main extends JavaPlugin {
             config.addDataSourceProperty("cachePrepStmts", "true");
             config.addDataSourceProperty("prepStmtCacheSize", "250");
             config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
+            config.setMaximumPoolSize(100);
             dataSource = new HikariDataSource(config);
             statement = dataSource.getConnection().createStatement();
         } catch (SQLException ignored) {

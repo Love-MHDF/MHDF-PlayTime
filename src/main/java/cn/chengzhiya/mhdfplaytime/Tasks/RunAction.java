@@ -33,7 +33,7 @@ public final class RunAction extends BukkitRunnable {
                         continue;
                     }
                     if (Action[0].equals("title")) {
-                        player.sendTitle(PlaceholderAPI.setPlaceholders(player, Action[1]), PlaceholderAPI.setPlaceholders(player, Action[2]), Integer.parseInt(Action[3]), Integer.parseInt(Action[4]), Integer.parseInt(Action[5]));
+                        player.sendTitle(ChatColor(PlaceholderAPI.setPlaceholders(player, Action[1])), ChatColor(PlaceholderAPI.setPlaceholders(player, Action[2])), Integer.parseInt(Action[3]), Integer.parseInt(Action[4]), Integer.parseInt(Action[5]));
                         continue;
                     }
                     if (Action[0].equals("message")) {

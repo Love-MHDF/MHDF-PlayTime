@@ -6,7 +6,7 @@
 
     <groupId>cn.ChengZhiYa</groupId>
     <artifactId>MHDF-PlayTime</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <packaging>jar</packaging>
 
     <name>MHDF-PlayTime</name>
